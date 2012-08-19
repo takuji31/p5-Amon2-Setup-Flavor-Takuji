@@ -1,0 +1,39 @@
+This is Perl module Amon2::Setup::Flavor::Takuji.
+
+INSTALLATION
+
+Type the following command:
+
+    $ curl -L http://cpanmin.us | perl - Amon2::Setup::Flavor::Takuji
+
+Or install cpanm and then run the following command to install
+Amon2::Setup::Flavor::Takuji:
+
+    $ cpanm Amon2::Setup::Flavor::Takuji
+
+If you get an archive of this distribution, unpack it and build it
+as per the usual:
+
+    $ tar xzf Amon2-Setup-Flavor-Takuji-$version.tar.gz
+    $ cd Amon2-Setup-Flavor-Takuji-$version
+    $ perl Build.PL
+    $ ./Build && ./Build test
+
+Then install it:
+
+    $ ./Build install
+
+DOCUMENTATION
+
+Amon2::Setup::Flavor::Takuji documentation is available as in POD. So you can do:
+
+    $ perldoc Amon2::Setup::Flavor::Takuji
+
+to read the documentation online with your favorite pager.
+
+LICENSE AND COPYRIGHT
+
+Copyright (c) 2012, Nishibayashi Takuji. All rights reserved.
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
