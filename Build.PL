@@ -9,6 +9,8 @@ my $buiild = Module::Build->new(
     module_name => 'Amon2::Setup::Flavor::Takuji',
     configure_requires => {'Module::Build' => '0.38'},
     requires => {
+        'Amon2' => '3.52',
+        'Exporter::Lite' => '0',
     },
     build_requires => {
         'Test::LoadAllModules'       => '0.021',
