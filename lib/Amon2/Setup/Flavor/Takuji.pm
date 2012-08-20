@@ -15,7 +15,7 @@ sub write_templates {
     $self->write_file("$base/index.tt", <<'...');
 [% WRAPPER 'include/layout.tt' %]
 
-<h1><% module %></h1>
+<h1><% $module %></h1>
 
 
 [% END %]
@@ -191,7 +191,7 @@ use File::Basename qw(dirname);
 my $basedir = File::Spec->rel2abs(File::Spec->catdir(dirname(__FILE__), '..'));
 {
     'DBI' => [
-        "dbi:mysql:dbname=<% dbname %>;host=127.0.0.1",
+        "dbi:mysql:dbname=<% $dbname %>;host=127.0.0.1",
         'root',
         '',
         {
@@ -202,7 +202,7 @@ my $basedir = File::Spec->rel2abs(File::Spec->catdir(dirname(__FILE__), '..'));
     ],
     Redis => {server => '127.0.0.1:6379'},
     session => {
-        prefix => '<% module %>_session_<% env %>',
+        prefix => '<% $module %>_session_<% $env %>',
         host => '127.0.0.1',
         port => '6379',
         expires => 3600 * 24 * 7,
@@ -333,15 +333,16 @@ note $table->draw;
     }
 
     $self->write_file('lib/<<PATH>>/Model.pm', <<'...', {});
-package <% module %>::Model
+package <% $module %>::Model
 use 5.016_001;
 use warnings;
 
-use <% module %>::DB;
+use <% $module %>::DB;
+use <% $module %>;
 
 sub db {
     my ($class, %args) = @_;
-    
+   
 }
 
 
